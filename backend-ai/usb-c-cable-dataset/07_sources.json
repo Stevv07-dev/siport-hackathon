@@ -1,0 +1,86 @@
+[
+  {
+    "id": "SRC-ID-BTKI",
+    "country": "Indonesia",
+    "authority": "Kementerian Keuangan / Direktorat Jenderal Bea dan Cukai",
+    "topic": "BTKI / HS Classification",
+    "url": "https://jdih.kemenkeu.go.id/",
+    "use_for": [
+      "HS classification",
+      "heading 8544",
+      "subheading structure",
+      "classification attributes"
+    ]
+  },
+  {
+    "id": "SRC-ID-LARTAS",
+    "country": "Indonesia",
+    "authority": "Kementerian Perdagangan",
+    "topic": "Export Restrictions / Lartas",
+    "url": "https://jdih.kemendag.go.id/",
+    "use_for": [
+      "export prohibited/restricted goods",
+      "specific scope",
+      "export requirements"
+    ]
+  },
+  {
+    "id": "SRC-SG-HS",
+    "country": "Singapore",
+    "authority": "Singapore Customs",
+    "topic": "HS Classification",
+    "url": "https://www.customs.gov.sg/doing-business/business-resources/hs-classification-of-goods/find-my-harmonised-system-code",
+    "use_for": [
+      "Singapore 8-digit HS",
+      "AHTN",
+      "HS classification guidance"
+    ]
+  },
+  {
+    "id": "SRC-SG-CHECKER",
+    "country": "Singapore",
+    "authority": "Singapore Customs",
+    "topic": "HS/CA Product Code Checker",
+    "url": "https://www.customs.gov.sg/transaction/search-tools/hs-ca-product-code-checker/",
+    "use_for": [
+      "HS lookup",
+      "CA lookup",
+      "controlled goods check"
+    ]
+  },
+  {
+    "id": "SRC-SG-CONTROLLED",
+    "country": "Singapore",
+    "authority": "Singapore Customs",
+    "topic": "Controlled and Prohibited Goods",
+    "url": "https://www.customs.gov.sg/businesses/importing-goods/import-procedures/controlled-prohibited-goods/",
+    "use_for": [
+      "controlled goods",
+      "prohibited goods",
+      "import authorisation"
+    ]
+  },
+  {
+    "id": "SRC-SG-CA",
+    "country": "Singapore",
+    "authority": "Singapore Customs",
+    "topic": "Competent Authorities",
+    "url": "https://www.customs.gov.sg/doing-business/quick-links-for-traders/tradenet/competent-authorities-requirements-for-controlled-items/competent-authorities-requirements-for-controlled-items-overview",
+    "use_for": [
+      "CA identification",
+      "TradeNet requirements",
+      "controlled item requirements"
+    ]
+  },
+  {
+    "id": "SRC-SG-RULING",
+    "country": "Singapore",
+    "authority": "Singapore Customs",
+    "topic": "Customs Classification Ruling",
+    "url": "https://www.customs.gov.sg/doing-business/business-resources/hs-classification-of-goods/application-for-customs-ruling-on-classification-of-goods/",
+    "use_for": [
+      "official classification ruling",
+      "classification uncertainty"
+    ]
+  }
+]

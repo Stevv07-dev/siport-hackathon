@@ -1,0 +1,122 @@
+[
+  {
+    "id": "Q001",
+    "stage": "classification",
+    "attribute": "connector_present",
+    "question": "Does the cable have a connector on either or both ends?",
+    "answer_type": "boolean",
+    "trigger": "product_type identified as insulated cable",
+    "priority": 1,
+    "reason": "Distinguishes conductors with connectors under heading 8544.",
+    "source_ids": ["SRC-ID-BTKI"]
+  },
+  {
+    "id": "Q002",
+    "stage": "classification",
+    "attribute": "connector_type",
+    "question": "What type of connector is attached to each end of the cable?",
+    "answer_type": "text",
+    "trigger": "connector_present == true",
+    "priority": 2,
+    "reason": "Helps provide a more specific description of the product.",
+    "source_ids": ["SRC-ID-BTKI"]
+  },
+  {
+    "id": "Q003",
+    "stage": "classification",
+    "attribute": "voltage_rating_v",
+    "question": "What is the maximum voltage rating of the cable?",
+    "answer_type": "number",
+    "unit": "V",
+    "trigger": "connector_present == true",
+    "priority": 3,
+    "reason": "Heading 8544.42 uses voltage thresholds and includes specific branches for low-voltage cables.",
+    "source_ids": ["SRC-ID-BTKI"]
+  },
+  {
+    "id": "Q004",
+    "stage": "classification",
+    "attribute": "telecommunication_use",
+    "question": "Is this cable intended for telecommunications use? Please describe its function and the devices it connects.",
+    "answer_type": "boolean_plus_text",
+    "trigger": "voltage_rating_v <= 1000",
+    "priority": 4,
+    "reason": "Some cable subheadings are differentiated based on their telecommunications use.",
+    "source_ids": ["SRC-ID-BTKI"]
+  },
+  {
+    "id": "Q005",
+    "stage": "classification",
+    "attribute": "insulation_material",
+    "question": "What material is used for the cable's insulation or jacket?",
+    "answer_type": "enum",
+    "options": [
+      "plastic",
+      "rubber",
+      "paper",
+      "other",
+      "unknown"
+    ],
+    "trigger": "classification branch requires insulation information",
+    "priority": 5,
+    "reason": "Some subheadings differentiate cables based on their insulation material.",
+    "source_ids": ["SRC-ID-BTKI"]
+  },
+  {
+    "id": "Q006",
+    "stage": "classification",
+    "attribute": "core_diameter_mm",
+    "question": "What is the diameter of the cable's conductor core in millimeters?",
+    "answer_type": "number",
+    "unit": "mm",
+    "trigger": "plastic-insulated branch requiring core diameter",
+    "priority": 6,
+    "reason": "Some subheadings differentiate cables based on conductor core diameter.",
+    "source_ids": ["SRC-ID-BTKI"]
+  },
+  {
+    "id": "Q007",
+    "stage": "classification",
+    "attribute": "flat_cable",
+    "question": "Is the cable a flat cable or a flat ribbon/data cable?",
+    "answer_type": "boolean",
+    "trigger": "classification remains ambiguous",
+    "priority": 7,
+    "reason": "Used as a clarification attribute when the product structure points to a flat data cable branch.",
+    "source_ids": ["SRC-ID-BTKI"]
+  },
+  {
+    "id": "Q008",
+    "stage": "compliance",
+    "attribute": "intended_use",
+    "question": "What is the cable used for, and what devices will it connect?",
+    "answer_type": "text",
+    "trigger": "before Indonesian export restriction lookup",
+    "priority": 8,
+    "reason": "Some export control provisions apply to specific product scopes and intended uses.",
+    "source_ids": ["SRC-ID-LARTAS"]
+  },
+  {
+    "id": "Q009",
+    "stage": "shipment",
+    "attribute": "quantity_pcs",
+    "question": "How many cables will be shipped?",
+    "answer_type": "integer",
+    "trigger": "shipment setup",
+    "priority": 9,
+    "reason": "Required for shipment and declaration data.",
+    "source_ids": []
+  },
+  {
+    "id": "Q010",
+    "stage": "shipment",
+    "attribute": "gross_weight_kg",
+    "question": "What is the total gross weight of the shipment?",
+    "answer_type": "number",
+    "unit": "kg",
+    "trigger": "shipment setup",
+    "priority": 10,
+    "reason": "Required for shipment and declaration data.",
+    "source_ids": []
+  }
+]

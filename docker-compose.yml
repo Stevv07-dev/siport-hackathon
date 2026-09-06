@@ -1,0 +1,85 @@
+# ---------------------------------------------------------------------------
+# MAXPORT — stack lokal / staging tanpa Traefik.
+# Aplikasi diterbitkan langsung ke host lewat APP_PORT.
+#
+#   cp .env.docker.example .env.docker
+#   docker compose up -d --build
+# ---------------------------------------------------------------------------
+
+services:
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE:-maxport_db}
+      MYSQL_USER: ${DB_USERNAME:-maxport}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-change-me}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root-change-me}
+      TZ: UTC
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "${DB_PUBLISHED_PORT:-3307}:3306"
+    healthcheck:
+      test: ["CMD-SHELL", 'mysqladmin ping -h 127.0.0.1 -u root -p"$${MYSQL_ROOT_PASSWORD}" --silent']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+
+  # Migrasi + cache konfigurasi. Berjalan sekali sampai selesai.
+  setup:
+    build:
+      context: .
+    restart: "no"
+    env_file:
+      - .env.docker
+    environment:
+      DB_HOST: mysql
+    command: ["setup"]
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - storage_app:/app/storage/app
+
+  app:
+    build:
+      context: .
+    restart: unless-stopped
+    env_file:
+      - .env.docker
+    environment:
+      DB_HOST: mysql
+    command: ["web"]
+    ports:
+      - "${APP_PORT:-8080}:8080"
+    volumes:
+      - storage_app:/app/storage/app
+    depends_on:
+      setup:
+        condition: service_completed_successfully
+
+  worker:
+    build:
+      context: .
+    restart: unless-stopped
+    env_file:
+      - .env.docker
+    environment:
+      DB_HOST: mysql
+    command: ["worker"]
+    volumes:
+      - storage_app:/app/storage/app
+    depends_on:
+      setup:
+        condition: service_completed_successfully
+    healthcheck:
+      disable: true
+
+volumes:
+  mysql_data:
+  storage_app:

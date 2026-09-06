@@ -1,0 +1,32 @@
+[
+  {
+    "id": "SG001",
+    "condition": "destination == Singapore",
+    "action": "determine Singapore 8-digit HS/AHTN code",
+    "source_ids": ["SRC-SG-HS"]
+  },
+  {
+    "id": "SG002",
+    "condition": "Singapore HS candidate exists",
+    "action": "check HS/CA Product Code Checker",
+    "source_ids": ["SRC-SG-HS", "SRC-SG-CHECKER"]
+  },
+  {
+    "id": "SG003",
+    "condition": "HS/CA checker indicates controlled item",
+    "action": "identify Competent Authority and obtain required authorisation/approval",
+    "source_ids": ["SRC-SG-CONTROLLED", "SRC-SG-CA"]
+  },
+  {
+    "id": "SG004",
+    "condition": "HS/CA checker indicates non-controlled item",
+    "action": "continue normal import compliance checks",
+    "source_ids": ["SRC-SG-CONTROLLED", "SRC-SG-CA"]
+  },
+  {
+    "id": "SG005",
+    "condition": "classification remains uncertain",
+    "action": "recommend official Singapore Customs classification ruling",
+    "source_ids": ["SRC-SG-RULING"]
+  }
+]

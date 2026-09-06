@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+
+    /* Cegah kedipan elemen Alpine sebelum JS termuat. */
+    [x-cloak] {
+        display: none !important;
+    }
+
+    body {
+        @apply bg-canvas text-ink antialiased;
+        font-feature-settings: 'cv11', 'ss01';
+        text-rendering: optimizeLegibility;
+    }
+
+    /* Judul selalu memakai tracking rapat seperti pada desain. */
+    h1, h2, h3, h4 {
+        @apply tracking-tight text-ink;
+    }
+
+    [type='checkbox'], [type='radio'] {
+        @apply border-line-strong text-brand-600 focus:ring-brand-500/40;
+    }
+
+    ::selection {
+        @apply bg-brand-100 text-ink;
+    }
+}
+
+@layer components {
+    /* ------------------------------------------------------------------
+     | Field
+     | Dua gaya input dipakai di desain: "filled" (halaman login) dan
+     | "underline" (halaman register). Keduanya berbagi tipografi & state.
+     ------------------------------------------------------------------ */
+    .field-label {
+        @apply block text-xs font-bold uppercase tracking-label text-ink;
+    }
+
+    .field-label-plain {
+        @apply block text-sm font-semibold text-ink;
+    }
+
+    .field-filled {
+        @apply block w-full rounded-lg border-transparent bg-surface-field px-4 py-3 text-sm text-ink
+               placeholder:text-ink-subtle
+               focus:border-brand-600 focus:bg-white focus:ring-2 focus:ring-brand-200
+               disabled:cursor-not-allowed disabled:opacity-60;
+    }
+
+    .field-underline {
+        @apply block w-full rounded-none border-0 border-b border-line-strong bg-transparent px-0 py-2.5 text-sm text-ink
+               placeholder:text-ink-subtle
+               focus:border-brand-600 focus:ring-0
+               disabled:cursor-not-allowed disabled:opacity-60;
+    }
+
+    .field-outline {
+        @apply block w-full rounded-lg border border-line-strong bg-white px-4 py-2.5 text-sm text-ink
+               placeholder:text-ink-subtle
+               focus:border-brand-600 focus:ring-2 focus:ring-brand-200
+               disabled:cursor-not-allowed disabled:opacity-60;
+    }
+
+    .field-error {
+        @apply border-danger-500/70 focus:border-danger-500 focus:ring-danger-500/20;
+    }
+
+    /* ------------------------------------------------------------------
+     | Button
+     ------------------------------------------------------------------ */
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold
+               transition duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+               focus-visible:ring-brand-600 focus-visible:ring-offset-canvas
+               disabled:cursor-not-allowed disabled:opacity-60;
+    }
+
+    .btn-primary {
+        @apply btn bg-brand-600 text-white shadow-button hover:bg-brand-700 active:bg-brand-800;
+    }
+
+    /* Tombol sekunder bergaris biru — dipakai berdampingan dengan btn-primary. */
+    .btn-outline {
+        @apply btn border border-brand-600 bg-white text-brand-600 hover:bg-brand-50 active:bg-brand-100;
+    }
+
+    .btn-secondary {
+        @apply btn border border-line-strong bg-white text-ink hover:bg-surface-sunken active:bg-surface-field;
+    }
+
+    .btn-ghost {
+        @apply btn text-ink-muted hover:bg-surface-sunken hover:text-ink;
+    }
+
+    .btn-danger {
+        @apply btn bg-danger-500 text-white hover:bg-danger-700;
+    }
+
+    .btn-block {
+        @apply w-full py-3;
+    }
+
+    /* ------------------------------------------------------------------
+     | Surface
+     ------------------------------------------------------------------ */
+    .card {
+        @apply rounded-2xl border border-line bg-surface-raised shadow-card;
+    }
+
+    .badge {
+        @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold;
+    }
+
+    .badge-neutral { @apply badge bg-surface-field text-ink-muted; }
+    .badge-brand   { @apply badge bg-brand-100 text-brand-800; }
+    .badge-success { @apply badge bg-success-50 text-success-700; }
+    .badge-warning { @apply badge bg-warning-50 text-warning-700; }
+    .badge-danger  { @apply badge bg-danger-100 text-danger-700; }
+
+    /* ------------------------------------------------------------------
+     | Alert — nada warna mengikuti mockup hasil verifikasi.
+     ------------------------------------------------------------------ */
+    .alert {
+        @apply flex items-start gap-4 rounded-2xl px-6 py-5;
+    }
+
+    .alert-success { @apply alert bg-success-50 text-success-700; }
+    .alert-danger  { @apply alert bg-danger-100 text-danger-700; }
+    .alert-warning { @apply alert bg-warning-50 text-warning-700; }
+    .alert-info    { @apply alert bg-brand-50 text-brand-800; }
+
+    .divider-label {
+        @apply flex items-center gap-4 text-xs font-semibold uppercase tracking-label text-ink-subtle;
+    }
+
+    .divider-label::before,
+    .divider-label::after {
+        @apply h-px flex-1 bg-line content-[''];
+    }
+
+    /* ------------------------------------------------------------------
+     | Navigasi sidebar (app shell)
+     ------------------------------------------------------------------ */
+    .side-link {
+        @apply flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-ink-muted
+               transition hover:bg-surface-sunken hover:text-ink;
+    }
+
+    .side-link-active {
+        @apply side-link bg-brand-600 text-white hover:bg-brand-700 hover:text-white;
+    }
+}

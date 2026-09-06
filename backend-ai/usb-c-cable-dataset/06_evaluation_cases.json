@@ -1,0 +1,77 @@
+[
+  {
+    "id": "CASE001",
+    "user_input": "Saya ingin ekspor 100 kabel USB-C dari Batam ke Singapura.",
+    "expected_extraction": {
+      "product_type": "USB-C cable",
+      "quantity_pcs": 100,
+      "origin": "Batam, Indonesia",
+      "destination": "Singapore"
+    },
+    "expected_missing_attributes": [
+      "connector_present",
+      "connector_type",
+      "voltage_rating_v",
+      "telecommunication_use",
+      "insulation_material",
+      "core_diameter_mm"
+    ],
+    "expected_action": "ask_clarification"
+  },
+  {
+    "id": "CASE002",
+    "user_input": "Saya mau kirim 100 USB-C to USB-C cable, panjang 1 meter, PVC, copper, 20 V, 100 W dari Batam ke Singapura.",
+    "expected_extraction": {
+      "product_type": "USB-C cable",
+      "connector_present": true,
+      "connector_type": "USB-C to USB-C",
+      "voltage_rating_v": 20,
+      "insulation_material": "PVC",
+      "conductor_material": "Copper",
+      "cable_length_m": 1,
+      "charging_power_w": 100,
+      "quantity_pcs": 100,
+      "origin": "Batam, Indonesia",
+      "destination": "Singapore"
+    },
+    "expected_missing_attributes": [
+      "telecommunication_use",
+      "core_diameter_mm"
+    ],
+    "expected_action": "ask_clarification_before_final_candidate"
+  },
+  {
+    "id": "CASE003",
+    "user_input": "Saya ingin ekspor kabel power dengan konektor untuk mesin ATM.",
+    "expected_action": "flag_specific_export_restriction_scope",
+    "reason": "The official Kemendag entry uses ex 8544.42.99 and specifically describes power cable with connector for ATM machines.",
+    "source_ids": [
+      "SRC-ID-LARTAS"
+    ]
+  },
+  {
+    "id": "CASE004",
+    "user_input": "Saya mau ekspor kabel USB-C biasa untuk charging HP.",
+    "expected_action": "do_not_mark_lartas_from_category_alone",
+    "required_action": [
+      "determine_candidate_HS",
+      "perform_current_official_export_restriction_lookup",
+      "compare exact product scope",
+      "show source"
+    ]
+  },
+  {
+    "id": "CASE005",
+    "user_input": "Saya mau mengirim USB-C cable ke Singapore tetapi tidak tahu apakah barang ini controlled.",
+    "expected_action": [
+      "determine_or_request_Singapore_HS",
+      "check_HS_CA_Product_Code_Checker",
+      "identify_CA_if_controlled"
+    ],
+    "source_ids": [
+      "SRC-SG-CHECKER",
+      "SRC-SG-CONTROLLED",
+      "SRC-SG-CA"
+    ]
+  }
+]

@@ -1,0 +1,171 @@
+[
+  {
+    "id": "product_type",
+    "label": "Product Type",
+    "example": "USB-C cable",
+    "required": true,
+    "stage": "product_identification",
+    "classification_relevance": "high"
+  },
+  {
+    "id": "connector_present",
+    "label": "Connector Present",
+    "example": true,
+    "required": true,
+    "stage": "classification",
+    "classification_relevance": "high"
+  },
+  {
+    "id": "connector_type",
+    "label": "Connector Type",
+    "example": "USB-C to USB-C",
+    "required": true,
+    "stage": "classification",
+    "classification_relevance": "medium"
+  },
+  {
+    "id": "voltage_rating_v",
+    "label": "Maximum Voltage Rating",
+    "example": 20,
+    "unit": "V",
+    "required": true,
+    "stage": "classification",
+    "classification_relevance": "high"
+  },
+  {
+    "id": "telecommunication_use",
+    "label": "Telecommunication Use",
+    "example": true,
+    "required": "conditional",
+    "stage": "classification",
+    "classification_relevance": "high"
+  },
+  {
+    "id": "insulation_material",
+    "label": "Insulation Material",
+    "example": "PVC",
+    "required": "conditional",
+    "stage": "classification",
+    "classification_relevance": "high"
+  },
+  {
+    "id": "flat_cable",
+    "label": "Flat/Ribbon Cable",
+    "example": false,
+    "required": "conditional",
+    "stage": "classification",
+    "classification_relevance": "medium"
+  },
+  {
+    "id": "core_diameter_mm",
+    "label": "Core Diameter",
+    "example": 0.5,
+    "unit": "mm",
+    "required": "conditional",
+    "stage": "classification",
+    "classification_relevance": "high"
+  },
+  {
+    "id": "conductor_material",
+    "label": "Conductor Material",
+    "example": "Copper",
+    "required": "conditional",
+    "stage": "product_characteristics",
+    "classification_relevance": "medium"
+  },
+  {
+    "id": "cable_length_m",
+    "label": "Cable Length",
+    "example": 1,
+    "unit": "m",
+    "required": false,
+    "stage": "product_characteristics",
+    "classification_relevance": "low"
+  },
+  {
+    "id": "data_transfer",
+    "label": "Data Transfer Capability",
+    "example": true,
+    "required": false,
+    "stage": "product_characteristics",
+    "classification_relevance": "medium"
+  },
+  {
+    "id": "data_rate_gbps",
+    "label": "Data Rate",
+    "example": 10,
+    "unit": "Gbps",
+    "required": false,
+    "stage": "product_characteristics",
+    "classification_relevance": "low"
+  },
+  {
+    "id": "charging_power_w",
+    "label": "Maximum Charging Power",
+    "example": 100,
+    "unit": "W",
+    "required": false,
+    "stage": "product_characteristics",
+    "classification_relevance": "low"
+  },
+  {
+    "id": "intended_use",
+    "label": "Intended Use",
+    "example": "Charging and data transfer for consumer electronic devices",
+    "required": true,
+    "stage": "compliance",
+    "classification_relevance": "medium"
+  },
+  {
+    "id": "quantity_pcs",
+    "label": "Quantity",
+    "example": 100,
+    "unit": "pcs",
+    "required": true,
+    "stage": "shipment",
+    "classification_relevance": "none"
+  },
+  {
+    "id": "gross_weight_kg",
+    "label": "Gross Weight",
+    "example": 5,
+    "unit": "kg",
+    "required": true,
+    "stage": "shipment",
+    "classification_relevance": "none"
+  },
+  {
+    "id": "unit_value_idr",
+    "label": "Unit Value",
+    "example": 50000,
+    "unit": "IDR",
+    "required": true,
+    "stage": "shipment",
+    "classification_relevance": "none"
+  },
+  {
+    "id": "total_value_idr",
+    "label": "Total Value",
+    "example": 5000000,
+    "unit": "IDR",
+    "required": true,
+    "stage": "shipment",
+    "classification_relevance": "none"
+  },
+  {
+    "id": "origin",
+    "label": "Origin",
+    "example": "Batam, Indonesia",
+    "required": true,
+    "stage": "shipment",
+    "classification_relevance": "none"
+  },
+  {
+    "id": "destination",
+    "label": "Destination",
+    "example": "Singapore",
+    "required": true,
+    "stage": "shipment",
+    "classification_relevance": "none"
+  }
+]

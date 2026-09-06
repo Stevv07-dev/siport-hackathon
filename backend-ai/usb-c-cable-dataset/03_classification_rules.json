@@ -1,0 +1,75 @@
+[
+  {
+    "id": "CLS001",
+    "condition": "product is an insulated electrical cable/conductor",
+    "result": {
+      "candidate_heading": "8544"
+    },
+    "source_ids": ["SRC-ID-BTKI"],
+    "confidence": "candidate"
+  },
+  {
+    "id": "CLS002",
+    "condition": "connector_present == true AND voltage_rating_v <= 1000",
+    "result": {
+      "candidate_subheading": "8544.42"
+    },
+    "source_ids": ["SRC-ID-BTKI"],
+    "confidence": "candidate"
+  },
+  {
+    "id": "CLS003",
+    "condition": "candidate_subheading == 8544.42 AND telecommunications_branch_applies",
+    "result": {
+      "next_action": "evaluate relevant 8544.42 subheadings"
+    },
+    "source_ids": ["SRC-ID-BTKI"],
+    "confidence": "candidate"
+  },
+  {
+    "id": "CLS004",
+    "condition": "plastic_insulation AND core_diameter_mm <= 5",
+    "result": {
+      "candidate_hs": "8544.42.94"
+    },
+    "source_ids": ["SRC-ID-BTKI"],
+    "confidence": "candidate"
+  },
+  {
+    "id": "CLS005",
+    "condition": "plastic_insulation AND core_diameter_mm > 5 AND core_diameter_mm <= 19.5",
+    "result": {
+      "candidate_hs": "8544.42.95"
+    },
+    "source_ids": ["SRC-ID-BTKI"],
+    "confidence": "candidate"
+  },
+  {
+    "id": "CLS006",
+    "condition": "other_plastic_insulated_cable",
+    "result": {
+      "candidate_hs": "8544.42.96"
+    },
+    "source_ids": ["SRC-ID-BTKI"],
+    "confidence": "candidate"
+  },
+  {
+    "id": "CLS007",
+    "condition": "rubber_or_paper_insulation",
+    "result": {
+      "candidate_hs": "8544.42.97"
+    },
+    "source_ids": ["SRC-ID-BTKI"],
+    "confidence": "candidate"
+  },
+  {
+    "id": "CLS008",
+    "condition": "classification cannot be determined confidently from available attributes",
+    "result": {
+      "candidate_hs": null,
+      "action": "request_more_information_or_official_classification"
+    },
+    "source_ids": ["SRC-ID-BTKI", "SRC-SG-RULING"],
+    "confidence": "needs_review"
+  }
+]

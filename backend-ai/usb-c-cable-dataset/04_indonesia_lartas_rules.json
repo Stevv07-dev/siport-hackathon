@@ -1,0 +1,22 @@
+[
+  {
+    "id": "LRT001",
+    "hs_scope": "ex 8544.42.99",
+    "scope_description": "Kabel Power dengan Konektor untuk mesin ATM",
+    "scope_type": "specific_goods",
+    "generic_usb_cable_applies": false,
+    "status": "restricted_scope_requires_match",
+    "action": "compare product intended_use and product description with the specific scope before applying the requirement",
+    "source_ids": ["SRC-ID-LARTAS"]
+  },
+  {
+    "id": "LRT002",
+    "hs_scope": "8544.42.*",
+    "scope_description": "Generic HS family",
+    "scope_type": "hs_family",
+    "generic_usb_cable_applies": "unknown",
+    "status": "lookup_required",
+    "action": "perform current official export restriction lookup using the final candidate HS and product scope",
+    "source_ids": ["SRC-ID-LARTAS"]
+  }
+]
