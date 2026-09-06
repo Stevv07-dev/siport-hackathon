@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @include('partials.head', [
-            'title' => 'Maximize Your Export, Minimize The Risk',
+            'title' => 'Maksimalkan ekspor anda, minimalkan risiko nya',
             'description' => 'MAXPORT helps first-time Indonesian exporters check their product specifications and prepare the documents needed to export electronics to Singapore.',
         ])
     </head>
