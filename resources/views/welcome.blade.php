@@ -37,7 +37,7 @@
                 <div class="grid items-center gap-14 lg:grid-cols-2">
                     <div>
                         <h1 class="text-4xl font-extrabold leading-[1.1] tracking-tight text-ink-navy sm:text-5xl">
-                            Maximize Your Export,<br>Minimize The Risk
+                            Maksimalkan ekspor anda,<br>minimalkan risiko nya
                         </h1>
 
                         <p class="mt-6 max-w-lg text-lg leading-relaxed text-ink-muted">
