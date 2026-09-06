@@ -4,7 +4,7 @@
     {{-- Sapaan --}}
     <x-card padding="px-8 py-10">
         <p class="text-xs font-bold uppercase tracking-label text-brand-600">
-            Maximize Your Export, Minimize The Risk
+            Maksimalkan ekspor anda, minimalkan risiko nya
         </p>
 
         <h1 class="mt-3 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
