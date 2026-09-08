@@ -21,7 +21,7 @@
         </div>
     </x-slot:hero>
 
-    <h2 class="text-3xl font-extrabold tracking-tight text-ink">MAXPORT</h2>
+    <h2 class="text-3xl font-extrabold tracking-tight text-ink">SIPORT</h2>
     <p class="mt-2 text-sm text-ink-muted">Create your account to start your analysis.</p>
 
     <x-auth.session-status class="mt-6" :status="session('status')" />
@@ -74,6 +74,6 @@
         <a href="#" class="underline decoration-line-strong underline-offset-2 hover:text-ink-muted">Terms of Service</a>
         and
         <a href="#" class="underline decoration-line-strong underline-offset-2 hover:text-ink-muted">Privacy Policy</a>.
-        MAXPORT uses encryption to keep your data secure.
+        SIPORT uses encryption to keep your data secure.
     </p>
 </x-guest-layout>

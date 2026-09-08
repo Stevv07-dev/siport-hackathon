@@ -3,9 +3,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<title>{{ isset($title) ? $title . ' — ' : '' }}{{ config('app.name', 'MAXPORT') }}</title>
+<title>{{ isset($title) ? $title . ' — ' : '' }}{{ config('app.name', 'SIPORT') }}</title>
 
-<meta name="description" content="{{ $description ?? 'MAXPORT membantu eksportir pemula Indonesia memeriksa kesiapan spesifikasi produk dan menyiapkan dokumen ekspor.' }}">
+<meta name="description" content="{{ $description ?? 'SIPORT helps first-time Indonesian exporters check product specifications and prepare export documents.' }}">
 
 {{-- Favicon & ikon aplikasi (dibuat dari public/logo/maxport-mark.svg) --}}
 <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">

@@ -2,8 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @include('partials.head', [
-            'title' => 'Maksimalkan ekspor anda, minimalkan risiko nya',
-            'description' => 'MAXPORT helps first-time Indonesian exporters check their product specifications and prepare the documents needed to export electronics to Singapore.',
+            'title' => 'Maximize Your Export, Minimize The Risk',
+            'description' => 'SIPORT helps first-time Indonesian exporters check their product specifications and prepare the documents needed to export electronics to Singapore.',
         ])
     </head>
     <body class="bg-surface font-sans text-ink antialiased">
@@ -37,7 +37,7 @@
                 <div class="grid items-center gap-14 lg:grid-cols-2">
                     <div>
                         <h1 class="text-4xl font-extrabold leading-[1.1] tracking-tight text-ink-navy sm:text-5xl">
-                            Maksimalkan ekspor anda,<br>minimalkan risiko nya
+                            Maximize Your Export,<br>Minimize The Risk
                         </h1>
 
                         <p class="mt-6 max-w-lg text-lg leading-relaxed text-ink-muted">
@@ -127,9 +127,9 @@
                 </div>
             </section>
 
-            {{-- Kenapa MAXPORT --}}
+            {{-- Kenapa SIPORT --}}
             <section class="mx-auto max-w-6xl px-6 py-20">
-                <h2 class="text-center text-3xl font-extrabold tracking-tight text-ink-navy">Why MAXPORT?</h2>
+                <h2 class="text-center text-3xl font-extrabold tracking-tight text-ink-navy">Why SIPORT?</h2>
                 <p class="mx-auto mt-3 max-w-xl text-center text-ink-muted">
                     Bringing together information that used to be scattered across many sources.
                 </p>
@@ -156,7 +156,7 @@
                 <div class="mx-auto max-w-6xl px-6 py-20">
                     <h2 class="text-3xl font-extrabold tracking-tight text-ink-navy">Initial Product Groups</h2>
                     <p class="mt-3 max-w-2xl text-ink-muted">
-                        The MAXPORT MVP focuses on the electrical/electronics sector within Indonesia–Singapore trade.
+                        The SIPORT MVP focuses on the electrical/electronics sector within Indonesia–Singapore trade.
                     </p>
 
                     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -183,9 +183,9 @@
 
             {{-- Tentang --}}
             <section id="about" class="mx-auto max-w-3xl px-6 py-20 text-center">
-                <h2 class="text-3xl font-extrabold tracking-tight text-ink-navy">About MAXPORT</h2>
+                <h2 class="text-3xl font-extrabold tracking-tight text-ink-navy">About SIPORT</h2>
                 <p class="mt-5 text-base leading-relaxed text-ink-muted">
-                    MAXPORT is a <strong class="font-semibold text-ink">first-line export readiness assistant</strong>
+                    SIPORT is a <strong class="font-semibold text-ink">first-line export readiness assistant</strong>
                     for Indonesian entrepreneurs and first-time exporters. It does not replace export consultants
                     or regulators — its job is to help you understand the state of your product before you step
                     into the real export process.
@@ -225,7 +225,7 @@
                 </div>
 
                 <div class="mt-12 flex flex-col gap-3 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
-                    <p class="text-xs text-ink-subtle">&copy; {{ date('Y') }} MAXPORT. Hackathon prototype.</p>
+                    <p class="text-xs text-ink-subtle">&copy; {{ date('Y') }} SIPORT. Hackathon prototype.</p>
                     <p class="text-xs text-ink-subtle">Screening results are not an official regulator decision.</p>
                 </div>
             </div>

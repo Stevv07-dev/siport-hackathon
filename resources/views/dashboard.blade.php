@@ -4,7 +4,7 @@
     {{-- Sapaan --}}
     <x-card padding="px-8 py-10">
         <p class="text-xs font-bold uppercase tracking-label text-brand-600">
-            Maksimalkan ekspor anda, minimalkan risiko nya
+            Maximize Your Export, Minimize The Risk
         </p>
 
         <h1 class="mt-3 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
@@ -12,7 +12,7 @@
         </h1>
 
         <p class="mt-3 max-w-xl text-base leading-relaxed text-ink-muted">
-            MAXPORT helps you check the export readiness of your electronic products for Singapore —
+            SIPORT helps you check the export readiness of your electronic products for Singapore —
             from specification screening to the list of documents you need to prepare.
         </p>
 

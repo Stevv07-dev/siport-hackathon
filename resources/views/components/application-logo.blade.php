@@ -13,7 +13,7 @@
 
 <span {{ $attributes->merge(['class' => 'inline-flex items-center gap-2.5']) }}>
     <img src="{{ asset('logo/maxport-mark-192.png') }}"
-         alt="{{ $showText ? '' : config('app.name', 'MAXPORT') }}"
+         alt="{{ $showText ? '' : config('app.name', 'SIPORT') }}"
          width="{{ $mark['px'] }}" height="{{ $mark['px'] }}"
          {{-- Sudut membulat sudah menyatu di dalam PNG, jangan di-clip lagi. --}}
          class="{{ $mark['class'] }} shrink-0"
@@ -21,7 +21,7 @@
 
     @if ($showText)
         <span class="leading-tight">
-            <span class="{{ $word }} block font-extrabold tracking-tight text-ink">MAXPORT</span>
+            <span class="{{ $word }} block font-extrabold tracking-tight text-ink">SIPORT</span>
             @if ($tagline)
                 <span class="block text-xs font-medium text-ink-muted">{{ $tagline }}</span>
             @endif
